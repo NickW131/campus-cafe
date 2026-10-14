@@ -1,0 +1,238 @@
+
+/* =========================================================
+   Lab 4 - style.css starter
+   Focus: CSS Grid & Nested Layouts
+========================================================= */
+
+/*
+    TODO (CSS #1):
+    - Complete the color palette (change values only)
+    - Choose a warm café theme
+*/
+
+:root {
+    --bg: #F5EBDD;
+    --panel: #FFF9F0;
+    --text: #30221a;
+    --muted: #7a5c42;
+    --border: #D8C3A5;
+    --accent: #f77d4d;
+    --radius: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Sets the container div to a 12-column CSS Grid */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+}
+
+/*
+    Mobile Mode:
+    - This is a mobile-first design
+    - Initially all grid items are stacked vertically
+    - This results in a single visible column spanning
+      the full width of the mobile browser viewport
+*/
+
+.container > * {
+    grid-column: 1 / -1;
+}
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+#header-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    display: block;
+    margin-top: 10px;
+}
+
+a {
+    color: var(--accent);
+}
+
+.menu-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+article {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+    background: #fff;
+}
+
+.price {
+    font-weight: 900;
+    color: var(--accent);
+}
+
+.actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-weight: 800;
+    cursor: pointer;
+    background: #fff;
+}
+
+#calcBtn {
+    background: var(--accent);
+    color: #fff;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+#receipt {
+    white-space: pre-wrap;
+    background: rgba(15, 23, 42, 0.03);
+    border: 1px dashed rgba(15, 23, 42, 0.15);
+    padding: 12px;
+    border-radius: 12px;
+    margin: 10px auto;
+    max-width: max-content;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+}
+
+.weather {
+    background: rgba(22, 163, 74, 0.08);
+    border: 1px solid rgba(22, 163, 74, 0.18);
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 8px;
+}
+
+/*
+    Responsive Design Breakpoints:
+
+    - Use the media queries below to explicitly place grid items
+    - Mobile Mode: 1 column (default)
+    - Tablet Mode: 2 columns
+    - Laptop Mode: 2 or 3 columns
+    - Desktop Mode: 3 columns
+
+    - Use grid-column and grid-row properties to place items in the grid
+    - Other options are grid-column-start, grid-column-end,
+      grid-row-start, and grid-row-end
+    - Use flexbox properties to change the stacking of articles
+      in the menu-flex container
+    - You can also make the nav panel into a flexbox if it aids your design
+
+    Additional Requirements:
+
+    - Make sure the receipt NEVER breaks for any viewport width
+      of 500px or greater.
+    - Header must always span the full width (12 grid columns)
+      of the first grid row.
+    - Footer does not always have to span the full width of the
+      last grid row but it must always be a part of the last grid row.
+    - Besides that, you are free to choose the number of rows you
+      would like to use for each mode. Whatever works best for your design.
+*/
+
+
+@media (min-width: 768px) {
+    .sidebar {
+        grid-column: span 6;
+    }
+
+    .ads {
+        grid-column: span 6;
+    }
+
+    .footer {
+        grid-column: 1 / -1;
+    }
+
+    #receipt {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-wrap: anywhere;
+        white-space: pre;
+        width: fit-content;
+        overflow-x: auto;
+    }
+}
+
+
+
+@media (min-width: 992px) {
+    .nav {
+        grid-column: span 3;
+    }
+
+    .content {
+        grid-column: span 6;
+    }
+
+    .sidebar {
+        grid-column: span 3
+    }
+
+    .ads {
+        grid-column: span 3;
+    }
+
+    .footer {
+        grid-column: span 9;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .ads {
+        grid-column: span 3;
+    }
+
+    .footer {
+        grid-column: span 9;
+    }
+
+    .menu-flex {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .menu-flex article {
+        flex: 1;
+        min-width: 0;
+    }
+}

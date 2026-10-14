@@ -1,0 +1,133 @@
+
+<!-- =======================================================
+     Lab 4 - index.html starter
+     Focus: HTML Content
+======================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Campus Café | Quote Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="head panel">
+            <h1>Campus Café</h1> <p hidden> You found me but did you find the hint</p>
+
+            <p class="muted">
+                Quote Dashboard • JavaScript Fundamentals + 12-column CSS Grid
+            </p>
+
+            <img id="header-img" src="https://images.unsplash.com/photo-1522120260484-0c13c92f4aa1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Coffee on a table" />
+
+            <p class="muted">
+                Attribution: Photo by Nathan Dumlao on
+                <a href="https://unsplash.com/photos/coffee-and-succulent-plants-I_394sxx0ec" target="_blank">
+                    Unsplash
+                </a>
+            </p>
+        </header>
+
+        <nav class="nav panel">
+            <h2>Sections</h2>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#quote">Get Quote</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+
+        <main class="content panel">
+            <section id="menu">
+                <h2>Menu</h2>
+
+                <p class="muted">
+                    Display cards only. Inputs are collected using dialogs.
+                </p>
+
+                <div class="menu-flex">
+                    <article>
+                        <h3>Coffee</h3>
+
+                        <p>
+                            Cup of hot or iced coffee, with optional coffee cream.
+                        </p>
+                        <p class="price">$3.25</p>
+                    </article>
+
+                    <article>
+                        <h3>Sandwich</h3>
+
+                        <p>
+                            Normal or toasted sandwich bread with of lettuce, tomatto, ham and cheese. 
+                        </p>
+                        <p class="price">$8.50</p>
+                    </article>
+
+                    <article>
+                        <h3>Salad</h3>
+
+                        <p>
+                            Regular caesars salad with optional croutons.
+                        </p>
+                        <p class="price">$7.25</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="quote" style="margin-top: 18px;">
+                <h2>Get a Quote</h2>
+
+                <p class="muted">
+                    Click Get Quote and enter values in dialogs.
+                </p>
+
+                <div class="actions">
+                    <button id="calcBtn" type="button">
+                        Get Quote
+                    </button>
+
+                    <button id="resetBtn" type="button">
+                        Reset
+                    </button>
+                </div>
+            </section>
+
+            <section id="about">
+                <h2>About</h2>
+                <p>Our café serves <strong>L</strong>ocally inspired drinks and fresh snacks for students. 
+                    We offer <strong>2</strong> convenient ways to enjoy your break: grab a coffee or sit down 
+                    with friends. Our goal is to make campus life a little more enjoyable for 
+                    <strong>2</strong> reasons: good food and a welcoming atmosphere.
+                </p>
+            </section>
+            
+        </main>
+
+        <aside class="sidebar panel">
+            <h3>Receipt</h3>
+            <pre id="receipt">No order data.</pre>
+        </aside>
+
+        <aside class="ads panel">
+            <h3>Local Weather</h3>
+            <div class="weather" id="weatherBox">Loading weather...</div>
+        </aside>
+
+        <footer class="footer panel">
+            <p>&copy; 2026 Campus Café</p>
+
+            <p class="muted">
+                Weather data by Open-Meteo (CC BY 4.0).
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
